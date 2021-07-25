@@ -1,0 +1,12 @@
+language = "bash"
+run="""
+export OKTETO_CONTROLLER_WORKDIR=/home/runner/okteto-theia/okteto-controller
+echo "export OKTETO_CONTROLLER_WORKDIR=$OKTETO_CONTROLLER_WORKDIR" > $OKTETO_CONTROLLER_WORKDIR/variable.sh
+cat $OKTETO_CONTROLLER_WORKDIR/old-bashrc > $HOME/.bashrc
+cat $OKTETO_CONTROLLER_WORKDIR/main.sh >> $HOME/.bashrc
+bash
+"""
+onBoot="""
+export OKTETO_CONTROLLER_WORKDIR=/home/runner/okteto-theia/okteto-controller
+. $OKTETO_CONTROLLER_WORKDIR/onBoot.sh
+"""

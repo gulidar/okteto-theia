@@ -1,0 +1,3 @@
+[submodule "okteto-controller"]
+	path = okteto-controller
+	url = https://github.com/gulidar/okteto-controller
