@@ -1,0 +1,7 @@
+deploy:
+#  - """
+#   okteto login --token $OKTETO_CLOUD_TOKEN
+#   okteto namespace
+#   okteto build -t okteto.dev/theia-jekyll:latest .
+# okteto.dev resolves to registry.cloud.okteto.net/isbur
+  - helm upgrade --install theia-jekyll . -f values-okteto.yaml -f values-jekyll.yaml

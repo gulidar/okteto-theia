@@ -66,18 +66,21 @@ Create the name of the service account to use
 Get the image name
 */}}
 {{- define "theia.image" -}}
-{{- $tag := default (include "theia.tag" .) .Values.image.tag -}}
-{{- $runtimes := list "nodejs" "go" "php" "dart" "cpp" "java" "rust" "python" "full" -}}
+    {{- printf "%s" .Values.imageName -}}
+        {{/*
+        {{- $tag := default (include "theia.tag" .) .Values.image.tag -}}
+        {{- $runtimes := list "nodejs" "go" "php" "dart" "cpp" "java" "rust" "python" "full" -}}
 
-{{if has .Values.runtime $runtimes }}
-   {{- if eq .Values.runtime "nodejs" -}}
-   {{- printf "%s:%s" .Values.image.repository $tag -}}
-   {{- else -}}
-   {{- printf "%s-%s:%s" .Values.image.repository .Values.runtime $tag -}}
-   {{- end -}}
-{{- else -}}
-    {{- fail (printf "%s is not a valid runtime. Valid values are: %s" .Values.runtime $runtimes) -}}
-{{- end -}}
+        {{if has .Values.runtime $runtimes }}
+        {{- if eq .Values.runtime "nodejs" -}}
+        {{- printf "%s:%s" .Values.image.repository $tag -}}
+        {{- else -}}
+        {{- printf "%s-%s:%s" .Values.image.repository .Values.runtime $tag -}}
+        {{- end -}}
+        {{- else -}}
+            {{- fail (printf "%s is not a valid runtime. Valid values are: %s" .Values.runtime $runtimes) -}}
+        {{- end -}}
+        */}}
 {{- end -}}
 
 {{/*
