@@ -19,3 +19,4 @@ resources:
 # Change this if your want to use port 3000 for your app.
 service:
   port: 3000 # Default Theia port
+  port2: 4000
