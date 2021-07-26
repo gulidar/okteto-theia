@@ -2,7 +2,7 @@
 runtime: full
 
 # use this to clone a repository automatically
-repository: https://github.com/okteto/movies
+repository: https://github.com/swcool/landing-page-theme
 
 # set this when using a private repository https://github.com/settings/tokens
 gitToken:
